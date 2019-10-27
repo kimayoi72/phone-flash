@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/phone-flash/static/css/main.268fd677.chunk.css",
+    "main.js": "/phone-flash/static/js/main.21c11915.chunk.js",
+    "main.js.map": "/phone-flash/static/js/main.21c11915.chunk.js.map",
+    "runtime-main.js": "/phone-flash/static/js/runtime-main.3ba0f56c.js",
+    "runtime-main.js.map": "/phone-flash/static/js/runtime-main.3ba0f56c.js.map",
+    "static/js/2.7b815cbe.chunk.js": "/phone-flash/static/js/2.7b815cbe.chunk.js",
+    "static/js/2.7b815cbe.chunk.js.map": "/phone-flash/static/js/2.7b815cbe.chunk.js.map",
+    "index.html": "/phone-flash/index.html",
+    "precache-manifest.63c069126a6925cc9061267d9033a82c.js": "/phone-flash/precache-manifest.63c069126a6925cc9061267d9033a82c.js",
+    "service-worker.js": "/phone-flash/service-worker.js",
+    "static/css/main.268fd677.chunk.css.map": "/phone-flash/static/css/main.268fd677.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3ba0f56c.js",
+    "static/js/2.7b815cbe.chunk.js",
+    "static/css/main.268fd677.chunk.css",
+    "static/js/main.21c11915.chunk.js"
+  ]
+}
