@@ -94,7 +94,7 @@ function useMediaStream(audioCtx: AudioContext): MediaStreamType {
         const source = audioCtx.createMediaStreamSource(stream);
         const analyzerNode = audioCtx.createAnalyser();
         analyzerNode.fftSize = 256;
-        analyzerNode.smoothingTimeConstant = 0.75;
+        analyzerNode.smoothingTimeConstant = 0.85;
         analyzerNode.minDecibels = -90;
         analyzerNode.maxDecibels = -10;
 
@@ -128,53 +128,54 @@ const AudioPage: React.SFC = props => {
     if (analyzer === undefined) return;
     if (canvasRef.current === null) return;
 
-    console.log("analyzer", analyzer);
-    console.log("Canvas", canvasCtx);
+
 //    const dataArray = new Uint8Array(analyzer.frequencyBinCount);
-    const canvas = canvasRef.current;
+    const canvas = canvasRef.current
+    const width = canvas.width
+    const height = canvas.height
+
+    console.log(canvas.width, canvas.scrollWidth, canvas.clientWidth)
 
     const drawTimeData = (dataArray : Uint8Array, canvasCtx : CanvasRenderingContext2D) => {
       canvasCtx.lineWidth = 2
       canvasCtx.strokeStyle = "rgb(255, 255, 0)"
 
       canvasCtx.beginPath()
-      const sliceWidth = (canvas.width * 1.0) / dataArray.length
+      const sliceWidth = (width * 1.0) / dataArray.length
       let x = 0
       for (let i = 0; i < dataArray.length; i++, x += sliceWidth) {
         let value = dataArray[i] / 128.0
-        let y = (value * canvas.height) / 2
+        let y = (value * height) / 2
         if (i === 0) {
           canvasCtx.moveTo(x, y)
         } else {
           canvasCtx.lineTo(x, y);
         }
       }
-      canvasCtx.lineTo(canvas.width, canvas.height / 2);
+      canvasCtx.lineTo(width, height / 2);
       canvasCtx.stroke();
     }
 
     const draw = () => {
-      canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
+      canvasCtx.clearRect(0, 0, width, height);
       canvasCtx.fillStyle = "rgb(200, 200, 200)";
-      canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
+      canvasCtx.fillRect(0, 0, width, height);
 
       let dataArray : Uint8Array;
       if (true) {
-        analyzer.fftSize = 1024
+        analyzer.fftSize = 512
         dataArray = new Uint8Array(analyzer.frequencyBinCount);
         analyzer.getByteTimeDomainData(dataArray);
         drawTimeData(dataArray, canvasCtx)
 
-        analyzer.fftSize = 1024
-        dataArray = new Uint8Array(analyzer.frequencyBinCount);
         analyzer.getByteFrequencyData(dataArray);
-        const barWidth = (canvas.width / dataArray.length)
+        const barWidth = (width / dataArray.length)
         let x = 0
         for (let i = 0; i < dataArray.length; i++, x += (barWidth+1)) {
           let value = dataArray[i]
 
-          canvasCtx.fillStyle = `rgb(${value*3/2+50}, 50, 50)`
-          canvasCtx.fillRect(x, canvas.height-value, barWidth, canvas.height)
+          canvasCtx.fillStyle = `rgb(${value+50}, 50, 50)`
+          canvasCtx.fillRect(x, height-value, barWidth, height)
         }
       }
 
@@ -185,7 +186,7 @@ const AudioPage: React.SFC = props => {
 
   return (
     <Fragment>
-      <canvas ref={canvasRef} width="800" height="600"></canvas>
+        <canvas ref={canvasRef}  style={{display:'block', width:'90vw', height:'auto'}}></canvas>
     </Fragment>
   );
 };
@@ -193,10 +194,10 @@ const AudioPage: React.SFC = props => {
 const App: React.FC = () => {
   return (
     <div className="App">
-      {/* <header className="App-header">
+      <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-      </header> */}
-      <main className="App-main">
+      </header>
+      <div className="App-main">
         <PermissionSwitch permissionDescription={{ name: "microphone" }}>
           <PermissionWhen state="granted">
             <div>Granted</div>
@@ -210,14 +211,13 @@ const App: React.FC = () => {
             <AudioPage />
           </PermissionWhen>
         </PermissionSwitch>
-      </main>
+      </div>
       <footer className="App-footer">
-        <div>
-          {config.name} - {config.version}
-        </div>
+        {config.name} - {config.version}
       </footer>
     </div>
   );
 };
 
 export default App;
+

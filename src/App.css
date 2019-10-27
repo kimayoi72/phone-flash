@@ -1,42 +1,55 @@
-.App {
-  text-align: center;
+/* html {
+  height: 100%
 }
+body, .root {
+  min-height: 100%
+} */
 
 .App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 20vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: calc(100% - 0px);
 }
 
 .App-link {
   color: #09d3ac;
 }
 
-.App-Main {
+.App {
   background-color: #282c34;
-  min-height: 60vh;
-  display: flex;
-  flex-direction: column;
+  text-align: center;
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-columns: 5vmin auto 5vmin;
+  grid-template-rows: 5vmin auto 8vmin;
+  grid-template-areas: 
+    "header header header"
+    ". content ."
+    "footer footer footer"
+  ;
+}
+
+.App-header {
+  grid-area: header;
+
+  background-color: #282c34;
+  color: white;
+
   align-items: center;
   justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-main {
+  grid-area: content;
+  background-color: #282c34;
 }
 
 .App-footer {
+  grid-area: footer;
+  padding:15px;
+
   background-color: #282c34;
   color: white;
-  min-height: 10vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 3vmin);
+
+  font-size: calc(15px + 3vmin);
 }
