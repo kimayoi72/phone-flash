@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "/phone-flash/static/css/main.268fd677.chunk.css",
-    "main.js": "/phone-flash/static/js/main.21c11915.chunk.js",
-    "main.js.map": "/phone-flash/static/js/main.21c11915.chunk.js.map",
+    "main.css": "/phone-flash/static/css/main.b61977bd.chunk.css",
+    "main.js": "/phone-flash/static/js/main.77d23bb8.chunk.js",
+    "main.js.map": "/phone-flash/static/js/main.77d23bb8.chunk.js.map",
     "runtime-main.js": "/phone-flash/static/js/runtime-main.3ba0f56c.js",
     "runtime-main.js.map": "/phone-flash/static/js/runtime-main.3ba0f56c.js.map",
-    "static/js/2.7b815cbe.chunk.js": "/phone-flash/static/js/2.7b815cbe.chunk.js",
-    "static/js/2.7b815cbe.chunk.js.map": "/phone-flash/static/js/2.7b815cbe.chunk.js.map",
+    "static/js/2.3b1083e7.chunk.js": "/phone-flash/static/js/2.3b1083e7.chunk.js",
+    "static/js/2.3b1083e7.chunk.js.map": "/phone-flash/static/js/2.3b1083e7.chunk.js.map",
     "index.html": "/phone-flash/index.html",
-    "precache-manifest.63c069126a6925cc9061267d9033a82c.js": "/phone-flash/precache-manifest.63c069126a6925cc9061267d9033a82c.js",
+    "precache-manifest.1157161542aeb1aef99d05148536047d.js": "/phone-flash/precache-manifest.1157161542aeb1aef99d05148536047d.js",
     "service-worker.js": "/phone-flash/service-worker.js",
-    "static/css/main.268fd677.chunk.css.map": "/phone-flash/static/css/main.268fd677.chunk.css.map"
+    "static/css/main.b61977bd.chunk.css.map": "/phone-flash/static/css/main.b61977bd.chunk.css.map",
+    "static/media/logo.svg": "/phone-flash/static/media/logo.348672aa.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.3ba0f56c.js",
-    "static/js/2.7b815cbe.chunk.js",
-    "static/css/main.268fd677.chunk.css",
-    "static/js/main.21c11915.chunk.js"
+    "static/js/2.3b1083e7.chunk.js",
+    "static/css/main.b61977bd.chunk.css",
+    "static/js/main.77d23bb8.chunk.js"
   ]
 }
