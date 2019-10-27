@@ -2,6 +2,7 @@
   "name": "phone-flash",
   "version": "0.1.0",
   "private": true,
+  "description": "Music flash light",
   "dependencies": {
     "@types/jest": "24.0.19",
     "@types/node": "12.11.1",
@@ -9,7 +10,9 @@
     "@types/react-dom": "16.9.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "react-scripts": "3.2.0",
+    "react-scripts": "3.2.0"
+  },
+  "devDependencies": {
     "typescript": "3.6.4"
   },
   "scripts": {
