@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "description": "Music flash light",
+  "homepage": "https://kimayoi72.github.io/phone-flash",
   "dependencies": {
     "@types/jest": "24.0.19",
     "@types/node": "12.11.1",
@@ -13,13 +14,16 @@
     "react-scripts": "3.2.0"
   },
   "devDependencies": {
+    "gh-pages": "^2.1.1",
     "typescript": "3.6.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npx yarn run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
