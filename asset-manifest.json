@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/phone-flash/static/css/main.197e5491.chunk.css",
+    "main.css": "/phone-flash/static/css/main.969ca5ad.chunk.css",
     "main.js": "/phone-flash/static/js/main.5fbf7495.chunk.js",
     "main.js.map": "/phone-flash/static/js/main.5fbf7495.chunk.js.map",
     "runtime-main.js": "/phone-flash/static/js/runtime-main.3ba0f56c.js",
@@ -8,15 +8,15 @@
     "static/js/2.3b1083e7.chunk.js": "/phone-flash/static/js/2.3b1083e7.chunk.js",
     "static/js/2.3b1083e7.chunk.js.map": "/phone-flash/static/js/2.3b1083e7.chunk.js.map",
     "index.html": "/phone-flash/index.html",
-    "precache-manifest.0b235d305fa155ec036fe73ba9759024.js": "/phone-flash/precache-manifest.0b235d305fa155ec036fe73ba9759024.js",
+    "precache-manifest.341fc58b3c2ba15bf9f28c2401768fa7.js": "/phone-flash/precache-manifest.341fc58b3c2ba15bf9f28c2401768fa7.js",
     "service-worker.js": "/phone-flash/service-worker.js",
-    "static/css/main.197e5491.chunk.css.map": "/phone-flash/static/css/main.197e5491.chunk.css.map",
+    "static/css/main.969ca5ad.chunk.css.map": "/phone-flash/static/css/main.969ca5ad.chunk.css.map",
     "static/media/logo.svg": "/phone-flash/static/media/logo.348672aa.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.3ba0f56c.js",
     "static/js/2.3b1083e7.chunk.js",
-    "static/css/main.197e5491.chunk.css",
+    "static/css/main.969ca5ad.chunk.css",
     "static/js/main.5fbf7495.chunk.js"
   ]
 }
