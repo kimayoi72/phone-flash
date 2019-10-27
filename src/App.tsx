@@ -128,17 +128,13 @@ const AudioPage: React.SFC = props => {
     if (analyzer === undefined) return;
     if (canvasRef.current === null) return;
 
-
-//    const dataArray = new Uint8Array(analyzer.frequencyBinCount);
     const canvas = canvasRef.current
     const width = canvas.width
     const height = canvas.height
 
-    console.log(canvas.width, canvas.scrollWidth, canvas.clientWidth)
-
     const drawTimeData = (dataArray : Uint8Array, canvasCtx : CanvasRenderingContext2D) => {
       canvasCtx.lineWidth = 2
-      canvasCtx.strokeStyle = "rgb(255, 255, 0)"
+      canvasCtx.strokeStyle = "rgba(255, 255, 0, 0.5)"
 
       canvasCtx.beginPath()
       const sliceWidth = (width * 1.0) / dataArray.length
@@ -158,12 +154,13 @@ const AudioPage: React.SFC = props => {
 
     const draw = () => {
       canvasCtx.clearRect(0, 0, width, height);
-      canvasCtx.fillStyle = "rgb(200, 200, 200)";
+      canvasCtx.fillStyle = "rgb(200, 200, 200, 0.25)";
       canvasCtx.fillRect(0, 0, width, height);
 
       let dataArray : Uint8Array;
       if (true) {
         analyzer.fftSize = 512
+
         dataArray = new Uint8Array(analyzer.frequencyBinCount);
         analyzer.getByteTimeDomainData(dataArray);
         drawTimeData(dataArray, canvasCtx)
@@ -171,11 +168,16 @@ const AudioPage: React.SFC = props => {
         analyzer.getByteFrequencyData(dataArray);
         const barWidth = (width / dataArray.length)
         let x = 0
-        for (let i = 0; i < dataArray.length; i++, x += (barWidth+1)) {
-          let value = dataArray[i]
+        for (let i = 0; i < dataArray.length; i +=4, x += (barWidth*4+1)) {
+          let value = 
+            (dataArray[i+0] + dataArray[i+1]  + dataArray[i+2]  + dataArray[i+3])/4.0
+          let y = value / 256 * height;
 
-          canvasCtx.fillStyle = `rgb(${value+50}, 50, 50)`
-          canvasCtx.fillRect(x, height-value, barWidth, height)
+          let a = 1
+          let h = i * 256*3/2 / dataArray.length;
+
+          canvasCtx.fillStyle = `hsla(${h}, 100%, 50%, ${a})`
+          canvasCtx.fillRect(x, height - y, barWidth*4, height)
         }
       }
 

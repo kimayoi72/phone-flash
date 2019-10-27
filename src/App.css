@@ -16,14 +16,15 @@ body, .root {
 .App {
   background-color: #282c34;
   text-align: center;
-  min-height: calc(100vh - 5vh);
+  min-height: calc(100vh - 0vh);
+  place-content: stretch center;
 
   display: grid;
   grid-template-columns: 5vmin auto 5vmin;
-  grid-template-rows: 5vmin auto 8vmin;
+  grid-template-rows: 5vmin auto 10vmin;
   grid-template-areas: 
     "header header header"
-    ". content ."
+    "content content content"
     "footer footer footer"
   ;
 }
@@ -41,15 +42,18 @@ body, .root {
 
 .App-main {
   grid-area: content;
+  place-self: center;
+
+  color: white;
   background-color: #282c34;
 }
 
 .App-footer {
   grid-area: footer;
-  padding:15px;
 
   background-color: #282c34;
   color: white;
 
+  align-self: center;
   font-size: calc(15px + 3vmin);
 }
