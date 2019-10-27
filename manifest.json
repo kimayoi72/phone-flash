@@ -1,5 +1,5 @@
 {
-  "short_name": "Phone Flash",
+  "short_name": "PhoneFlash",
   "name": "Phone Flash",
   "icons": [
     {
@@ -19,7 +19,8 @@
     }
   ],
   "start_url": ".",
-  "display": "fullscreen",
+  "display": "standalone",
   "theme_color": "#282c34",
-  "background_color": "#282c34"
+  "background_color": "#282c34",
+  "orientation":"landscape"
 }
