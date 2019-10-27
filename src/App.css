@@ -1,9 +1,9 @@
-/* html {
+html {
   height: 100%
 }
 body, .root {
   min-height: 100%
-} */
+}
 
 .App-logo {
   height: calc(100% - 0px);
@@ -16,7 +16,7 @@ body, .root {
 .App {
   background-color: #282c34;
   text-align: center;
-  min-height: 100vh;
+  min-height: calc(100vh - 5vh);
 
   display: grid;
   grid-template-columns: 5vmin auto 5vmin;
